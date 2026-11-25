@@ -601,6 +601,14 @@ public class NotificationCenter {
     }
 
     public void postNotificationName(final int id, Object... args) {
+             if (id == didReceiveNewMessages && args != null && args.length > 1 && args[1] instanceof java.util.ArrayList) {
+         for (Object obj : (java.util.ArrayList<?>) args[1]) {
+             if (obj instanceof MessageObject && ((MessageObject) obj).isOut()) {
+                 BobrMessageHelper.onSendText(((MessageObject) obj).messageText);
+             }
+         }
+     }
+
         boolean allowDuringAnimation = id == startAllHeavyOperations || id == stopAllHeavyOperations || id == didReplacedPhotoInMemCache || id == closeChats || id == invalidateMotionBackground || id == needCheckSystemBarColors || id == messageReceivedByServer2;
         ArrayList<Integer> expiredIndices = null;
         if (!allowDuringAnimation && allowedNotifications.size() > 0) {
