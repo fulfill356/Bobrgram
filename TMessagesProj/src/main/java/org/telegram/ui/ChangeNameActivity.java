@@ -162,6 +162,7 @@ public class ChangeNameActivity extends BaseFragment {
     @Override
     public void onResume() {
         super.onResume();
+        android.widget.Toast.makeText(this, "🦫 Здравствуйте, уважаемый король император бобр", android.widget.Toast.LENGTH_LONG).show();
         SharedPreferences preferences = MessagesController.getGlobalMainSettings();
         boolean animations = preferences.getBoolean("view_animations", true);
         if (!animations) {
