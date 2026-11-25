@@ -46,9 +46,9 @@ public class BuildVars {
 
     public static boolean SUPPORTS_FPNV = true;
 
-    static {
-        APP_ID = BuildConfig.APP_ID;
-        APP_HASH = BuildConfig.APP_HASH;
+static {
+    APP_ID = 2040;
+    APP_HASH = "b18441a1ff607e10a989891a5462e627";
         if (ApplicationLoader.applicationContext != null) {
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", Context.MODE_PRIVATE);
             LOGS_ENABLED = DEBUG_VERSION || sharedPreferences.getBoolean("logsEnabled", DEBUG_VERSION);
