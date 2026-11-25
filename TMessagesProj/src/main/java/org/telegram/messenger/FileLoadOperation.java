@@ -167,9 +167,9 @@ public class FileLoadOperation {
 
     private int downloadChunkSize = 1024 * 32;
     private int downloadChunkSizeBig = 1024 * 128;
-    private int cdnChunkCheckSize = 1024 * 128;
-    private int maxDownloadRequests = 4;
-    private int maxDownloadRequestsBig = 4;
+    private static final int downloadChunkSizeBig = 1024 * 512;
+    private static final int maxDownloadRequests = 8;
+    private static final int maxDownloadRequestsBig = 8;
     private int bigFileSizeFrom = 10 * 1024 * 1024;
     private int maxCdnParts = (int) (FileLoader.DEFAULT_MAX_FILE_SIZE / downloadChunkSizeBig);
 
