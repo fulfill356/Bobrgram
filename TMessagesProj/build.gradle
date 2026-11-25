@@ -83,7 +83,7 @@ if (nativeTarget == 'SKIP') {
 }
 
 android {
-    defaultConfig.applicationId = "org.bobrgram.messenger"
+    defaultConfig.applicationId = APP_PACKAGE
     androidResources {
         noCompress += "pack"
         localeFilters += ["zz"]
