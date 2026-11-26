@@ -1148,11 +1148,11 @@ class WebRtcVoiceSendChannel::WebRtcAudioSendStream : public AudioSource::Sink {
         max_send_bitrate_bps_, rtp_parameters_.encodings[0].max_bitrate_bps,
         *audio_codec_spec_);
 
-    if (tgcalls::GroupInstanceCustomImpl::customAudioBitrate != 0) {
-      config_.send_codec_spec->target_bitrate_bps = tgcalls::GroupInstanceCustomImpl::customAudioBitrate;
-      config_.max_bitrate_bps = tgcalls::GroupInstanceCustomImpl::customAudioBitrate;
-      config_.min_bitrate_bps = tgcalls::GroupInstanceCustomImpl::customAudioBitrate;
-    }
+    // if (tgcalls::GroupInstanceCustomImpl::customAudioBitrate != 0) {
+//     config._send_codec_spec->target_bitrate_bps = tgcalls::GroupInstanceCustomImpl::customAudioBitrate;
+//     config._max_bitrate_bps = tgcalls::GroupInstanceCustomImpl::customAudioBitrate;
+//     config._min_bitrate_bps = tgcalls::GroupInstanceCustomImpl::customAudioBitrate;
+// }
     UpdateAllowedBitrateRange();
 
     // Encoder will only use two channels if the stereo parameter is set.
